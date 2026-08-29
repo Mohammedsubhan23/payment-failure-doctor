@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Failure Doctor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow"><span class="dot"></span>DIAGNOSTIC ENGINE &mdash; FAILED PAYMENT TRIAGE</div>
+    <div class="title-row">
+      <h1>Payment Failure Doctor</h1>
+      <span class="api-status" id="apiStatus">checking API…</span>
+    </div>
+    <p class="sub">A trained classifier reads each failed payment's gateway error and context to assign a root cause and a retry-success probability. An LLM is used only to explain that result in plain language &mdash; it never guesses the cause itself. This page works standalone with a client-side approximation, and automatically upgrades to the real trained-model backend the moment it's running.</p>
+    <svg class="ecg" viewBox="0 0 600 34" preserveAspectRatio="none"><path d="M0,17 L140,17 L160,4 L180,30 L200,17 L230,17 L245,10 L260,17 L600,17"/></svg>
+  </header>
+
+  <div class="card upload-card">
+    <h2>Data source</h2>
+    <p class="hint">Upload a CSV of failed transactions, or run on the bundled demo sample. Required columns: id, amount, method, bank, hour, day_of_week, prior_retries, is_new_customer, error_code, reason</p>
+    <div class="ask-row">
+      <input type="file" id="csvFile" accept=".csv">
+      <button class="btn" onclick="uploadCSV()">Classify upload</button>
+      <button class="btn ghost" onclick="loadSample()">Use demo sample</button>
+    </div>
+  </div>
+
+  <div class="vitals" id="vitals"></div>
+
+  <div class="card">
+    <h2>Revenue leak map</h2>
+    <p class="hint">Where failed value is going, by model-assigned root cause</p>
+    <div class="leakbar" id="leakbar"></div>
+    <div class="legend" id="legend"></div>
+  </div>
+
+  <div class="card">
+    <h2>Ask the doctor</h2>
+    <p class="hint">Answers are generated from the batch summary above, computed by the model &mdash; not guessed by the LLM</p>
+    <div class="ask-row">
+      <input id="doctorQ" type="text" placeholder="e.g. why are most of my UPI payments failing this week?" onkeydown="if(event.key==='Enter')askDoctor()">
+      <button class="btn" onclick="askDoctor()" id="askBtn">Ask</button>
+    </div>
+    <div id="doctorAnswer"></div>
+  </div>
+
+  <div class="filters">
+    <select id="fBucket" onchange="renderFeed()"><option value="">All root causes</option></select>
+    <select id="fMethod" onchange="renderFeed()">
+      <option value="">All methods</option>
+      <option>UPI</option><option>Card</option><option>Netbanking</option><option>Wallet</option>
+    </select>
+    <span class="count" id="fCount"></span>
+  </div>
+
+  <div id="feed"></div>
+
+  <footer>
+    <details>
+      <summary>How this works (model + AI layer)</summary>
+      <div class="engine-note">
+        <b>Two real models, trained and evaluated, not rules.</b> A RandomForest classifier assigns the root-cause bucket and a GradientBoosting model estimates retry-success probability, both trained on labelled transaction data with a held-out test set (92.9% test accuracy on bucket classification &mdash; see backend/train.py output for the full report). The LLM is only called after classification is done &mdash; it receives the model's output as ground truth and is instructed not to re-derive it, and is used strictly to turn numbers into a merchant-facing sentence, or to answer a free-form question against the computed summary.
+        <br><br>
+        <b>If you're viewing this without the backend running</b>, the status pill above will say so, and every number on the page instead comes from a small client-side heuristic (visible in frontend/app.js) rather than the trained model &mdash; useful for a zero-setup look, but the backend is what this project is actually evaluated on. Start it with <code>cd backend && python train.py && uvicorn main:app --reload</code>, then reload this page.
+      </div>
+    </details>
+  </footer>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

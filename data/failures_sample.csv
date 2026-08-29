@@ -1,0 +1,61 @@
+amount,method,bank,hour,day_of_week,prior_retries,is_new_customer,error_code,reason,bucket,retry_success
+2090,Card,SBI,0,6,0,0,GATEWAY_ERROR,internal_error,timeout,1
+673,Card,ICICI Bank,15,6,3,0,GATEWAY_ERROR,issuer_risk_block,risk,0
+1124,Card,Kotak Mahindra,14,4,0,1,BAD_REQUEST_ERROR,user_cancelled,dropoff,1
+14299,UPI,Axis Bank,13,1,1,0,GATEWAY_ERROR,issuer_unavailable,timeout,1
+1009,UPI,SBI,5,6,0,1,BAD_REQUEST_ERROR,invalid_cvv,invalid,1
+4007,Netbanking,IDFC First,0,0,1,0,BAD_REQUEST_ERROR,issuer_general_decline,timeout,1
+1907,UPI,SBI,8,2,0,1,GATEWAY_ERROR,issuer_risk_block,risk,0
+691,Wallet,Yes Bank,18,3,2,0,BAD_REQUEST_ERROR,otp_timeout,dropoff,0
+1026,Card,Axis Bank,15,3,1,0,GATEWAY_ERROR,issuer_risk_block,risk,0
+1507,Card,Kotak Mahindra,5,6,0,0,GATEWAY_ERROR,issuer_unavailable,timeout,1
+997,Netbanking,Yes Bank,20,0,0,0,GATEWAY_ERROR,internal_error,timeout,1
+984,UPI,ICICI Bank,16,3,0,0,BAD_REQUEST_ERROR,otp_timeout,dropoff,1
+1977,Card,Axis Bank,16,2,0,1,GATEWAY_ERROR,issuer_unavailable,timeout,1
+1031,Netbanking,SBI,21,4,1,0,GATEWAY_ERROR,internal_error,timeout,1
+959,Card,ICICI Bank,18,0,0,0,BAD_REQUEST_ERROR,issuer_general_decline,decline,1
+2219,UPI,Axis Bank,6,6,1,0,BAD_REQUEST_ERROR,user_cancelled,dropoff,1
+804,Card,SBI,15,4,0,1,BAD_REQUEST_ERROR,user_cancelled,dropoff,0
+818,UPI,IDFC First,5,5,3,0,BAD_REQUEST_ERROR,invalid_cvv,invalid,0
+6183,Netbanking,IDFC First,14,3,0,0,BAD_REQUEST_ERROR,user_cancelled,dropoff,0
+1593,UPI,IDFC First,18,3,1,0,BAD_REQUEST_ERROR,otp_timeout,dropoff,1
+409,Card,IDFC First,14,3,2,0,GATEWAY_ERROR,issuer_unavailable,funds,0
+518,Card,ICICI Bank,18,0,1,0,BAD_REQUEST_ERROR,insufficient_funds,funds,0
+1294,Card,Axis Bank,0,2,1,0,BAD_REQUEST_ERROR,otp_timeout,dropoff,0
+630,UPI,Axis Bank,2,4,2,0,GATEWAY_ERROR,internal_error,timeout,1
+758,Card,HDFC Bank,7,2,0,0,BAD_REQUEST_ERROR,insufficient_funds,funds,1
+955,UPI,Yes Bank,2,1,0,1,BAD_REQUEST_ERROR,issuer_general_decline,decline,0
+778,Card,HDFC Bank,8,4,0,0,GATEWAY_ERROR,issuer_risk_block,risk,0
+1738,UPI,Yes Bank,6,3,0,1,BAD_REQUEST_ERROR,insufficient_funds,funds,0
+9062,Netbanking,SBI,3,1,0,0,BAD_REQUEST_ERROR,user_cancelled,dropoff,0
+5713,Netbanking,Yes Bank,9,3,0,0,BAD_REQUEST_ERROR,invalid_expiry,invalid,0
+156,Card,Yes Bank,1,6,0,0,GATEWAY_ERROR,issuer_unavailable,timeout,1
+1726,UPI,SBI,7,3,1,1,GATEWAY_ERROR,issuer_risk_block,risk,0
+3341,UPI,SBI,16,5,1,0,BAD_REQUEST_ERROR,invalid_cvv,invalid,1
+904,Card,IDFC First,5,5,2,0,BAD_REQUEST_ERROR,issuer_general_decline,decline,0
+2785,Card,Axis Bank,7,1,0,0,BAD_REQUEST_ERROR,issuer_general_decline,decline,1
+916,UPI,SBI,22,0,2,0,BAD_REQUEST_ERROR,otp_timeout,dropoff,0
+1284,UPI,Axis Bank,19,0,0,1,BAD_REQUEST_ERROR,otp_timeout,dropoff,1
+9976,Netbanking,Axis Bank,10,5,1,0,BAD_REQUEST_ERROR,user_cancelled,dropoff,1
+357,UPI,ICICI Bank,4,1,0,0,GATEWAY_ERROR,issuer_unavailable,timeout,1
+15238,UPI,Yes Bank,8,6,2,0,BAD_REQUEST_ERROR,user_cancelled,dropoff,1
+811,Wallet,SBI,19,1,1,0,BAD_REQUEST_ERROR,insufficient_funds,funds,0
+520,UPI,IDFC First,7,6,1,0,GATEWAY_ERROR,issuer_unavailable,timeout,1
+673,Card,ICICI Bank,7,0,0,0,BAD_REQUEST_ERROR,invalid_cvv,invalid,1
+1136,Netbanking,IDFC First,11,1,0,0,BAD_REQUEST_ERROR,otp_timeout,dropoff,1
+1403,Netbanking,Yes Bank,1,2,0,1,BAD_REQUEST_ERROR,otp_timeout,dropoff,0
+1153,UPI,Kotak Mahindra,20,5,0,1,BAD_REQUEST_ERROR,user_cancelled,dropoff,1
+17172,UPI,ICICI Bank,14,2,0,1,BAD_REQUEST_ERROR,otp_timeout,dropoff,1
+229,Wallet,Yes Bank,23,5,0,0,BAD_REQUEST_ERROR,insufficient_funds,funds,0
+14642,UPI,SBI,8,3,0,0,GATEWAY_ERROR,issuer_risk_block,risk,0
+1563,UPI,Yes Bank,5,5,0,0,BAD_REQUEST_ERROR,otp_timeout,dropoff,0
+12806,UPI,HDFC Bank,16,2,2,1,GATEWAY_ERROR,internal_error,timeout,1
+2130,UPI,IDFC First,13,3,0,0,GATEWAY_ERROR,issuer_risk_block,timeout,1
+1182,Card,Kotak Mahindra,22,3,0,0,BAD_REQUEST_ERROR,user_cancelled,dropoff,1
+1528,Card,Kotak Mahindra,2,2,0,1,BAD_REQUEST_ERROR,otp_timeout,dropoff,1
+1359,UPI,Axis Bank,9,4,1,1,BAD_REQUEST_ERROR,otp_timeout,dropoff,1
+10437,Wallet,Axis Bank,13,5,0,1,BAD_REQUEST_ERROR,invalid_cvv,invalid,0
+1014,UPI,ICICI Bank,18,0,0,0,GATEWAY_ERROR,issuer_unavailable,timeout,1
+2002,UPI,ICICI Bank,13,6,1,1,BAD_REQUEST_ERROR,otp_timeout,dropoff,1
+1496,Card,Kotak Mahindra,6,2,0,1,GATEWAY_ERROR,issuer_risk_block,risk,0
+12065,Netbanking,IDFC First,10,4,0,0,BAD_REQUEST_ERROR,invalid_cvv,invalid,0
